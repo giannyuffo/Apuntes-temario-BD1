@@ -553,7 +553,6 @@ La version **sin** el **ON** sería así:
 |Madeleine LeBeau|
 
 
-
 7.
 Obtain the cast list for the film 'Alien'
 
@@ -570,66 +569,71 @@ FROM movie, casting, actor
    AND actor.id = casting.actorid;
 
 
-name
-Sigourney Weaver
-Ian Holm
-Harry Dean Stanton
-Tom Skerritt
-John Hurt
-Veronica Cartwright
-Yaphet Kotto
+|name|
+|---|
+|Sigourney Weaver|
+|Ian Holm|
+|Harry Dean Stanton|
+|Tom Skerritt|
+|John Hurt|
+|Veronica Cartwright|
+|Yaphet Kotto|
 
 
 8.
 List the films in which 'Harrison Ford' has appeared
-SELECT movie.title
- FROM 
-actor JOIN casting ON actor.id = casting.actorid 
-         JOIN movie ON movie.id = casting.movieid 
-WHERE actor.name = 'Harrison Ford'
+>SELECT movie.title  
+FROM   
+actor JOIN casting ON actor.id = casting.actorid   
+         JOIN movie ON movie.id = casting.movieid   
+WHERE actor.name = 'Harrison Ford';
 
 
-title
-Star Wars
-Star Wars: Episode V - The Empire Strikes Back
-Raiders of the Lost Ark
-Star Wars: Episode VI - Return of the Jedi
-Blade Runner
-Indiana Jones and the Last Crusade
-Fugitive, The
-Apocalypse Now
-Indiana Jones and the Temple of Doom
-Air Force One
-Witness
-Clear and Present Danger
-Patriot Games
-American Graffiti
-What Lies Beneath
-Six Days Seven Nights
-Working Girl
-Sabrina
-Devil's Own, The
-Conversation, The
-Regarding Henry
-Frantic
-Presumed Innocent
-Random Hearts
-Mosquito Coast, The
+|title|
+|---|
+|Star Wars|
+|Star Wars: Episode V - The Empire Strikes Back|
+|Raiders of the Lost Ark|
+|Star Wars: Episode VI - Return of the Jedi|
+|Blade Runner|
+|Indiana Jones and the Last Crusade|
+|Fugitive, The|
+|Apocalypse Now|
+|Indiana Jones and the Temple of Doom|
+|Air Force One|
+|Witness|
+|Clear and Present Danger|
+|Patriot Games|
+|American Graffiti|
+|What Lies Beneath|
+|Six Days Seven Nights|
+|Working Girl|
+|Sabrina|
+|Devil's Own, The|
+|Conversation, The|
+|Regarding Henry|
+|Frantic|
+|Presumed Innocent|
+|Random Hearts|
+|Mosquito Coast, The|
 
 
 9.
-List the films where 'Harrison Ford' has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role]
-SELECT movie.title FROM movie JOIN casting ON movie.id = casting.movieid JOIN actor ON actor.id= casting.actorid WHERE actor.name = 'Harrison Ford' AND casting.ord <> 1;
+List the films where 'Harrison Ford' has appeared - but not in the starring role. [Note: the ord field of casting gives the position of the actor. If ord=1 then this actor is in the starring role]  
+>SELECT movie.title  
+ FROM movie JOIN casting ON movie.id = casting.movieid   
+ JOIN actor ON actor.id= casting.actorid   
+ WHERE actor.name = 'Harrison Ford' AND casting.ord <> 1;
 
+|title|
+|--|
+|Star Wars|
+|Star Wars: Episode V - The Empire Strikes Back|
+|Star Wars: Episode VI - Return of the Jedi|
+|Apocalypse Now|
+|American Graffiti|
+|Conversation, The|
 
-title
-Star Wars
-Star Wars: Episode V - The Empire Strikes Back
-Star Wars: Episode VI - Return of the Jedi
-Apocalypse Now
-American Graffiti
-Conversation, The
-.
 https://zh.sqlzoo.net/wiki/More_JOIN_operations
 
 
@@ -637,12 +641,10 @@ https://zh.sqlzoo.net/wiki/More_JOIN_operations
 
 
 
-CONSULTA MINIMA EN SQL
+## CONSULTA MINIMA EN SQL
 
-SELECT *
-FROM  world;
-
-
+**SELECT***  
+**FROM  world;**
 
 
 
@@ -651,22 +653,12 @@ FROM  world;
 
 
 
-name
-continent
-area
-population
-gdp
-capital
-tld
-flag
-Afghanistan
-Asia
-652230
-25500100
-20364000000
-Kabul
-.af
-//upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan.svg
+
+
+|name|continent|area|population|gdp|capital|tld|flag|  
+|----|----|----|----|----|----|----|
+
+|Afghanistan|Asia|652230|25500100|20364000000|Kabul|.af//upload.wikimedia.org/wikipedia/commons/9/9a/Flag_of_Afghanistan.svg|
 Albania
 Europe
 28748
